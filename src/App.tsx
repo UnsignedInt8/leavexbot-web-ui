@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import './styles/default.scss';
 import './styles/wechat.scss';
@@ -36,7 +35,7 @@ export default class App extends React.Component {
           </div>
 
           <div id='timestamp'>
-            {new Date().toLocaleString()}
+            {`${new Date().toLocaleString()} - LeaveXchat`}
           </div>
         </div>
 
