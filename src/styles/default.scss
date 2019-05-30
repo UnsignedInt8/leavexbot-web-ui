@@ -1,0 +1,15 @@
+#container.default {
+  background: #ffefd1;
+
+  #person {
+    color: #3f2505;
+  }
+
+  #message {
+    color: black;
+
+    #timestamp {
+      color: rgb(126, 126, 126);
+    }
+  }
+}

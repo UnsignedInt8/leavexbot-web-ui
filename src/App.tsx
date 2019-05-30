@@ -1,26 +1,37 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import './styles/default.scss';
+import url from 'url';
+import query from 'querystring';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+
+  render() {
+    let data = url.parse(window.location.href);
+    let { n, s, m } = query.parse(data.query || '') as { n: string, s: string, m: string };
+
+    return (
+      <div id='container' className='default'>
+        <div id='info'>
+          <img id='avatar' src="https://pbs.twimg.com/profile_images/874276197357596672/kUuht00m_400x400.jpg" alt="" />
+          <div id='person'>
+            <div id='name'>{n}</div>
+            <div id='signature'>{s}</div>
+          </div>
+        </div>
+
+        <div id='message'>
+          <div>
+            {m}
+          </div>
+
+          <div id='timestamp'>
+            {new Date().toLocaleString()}
+          </div>
+        </div>
+
+      </div>
+    );
+  }
 }
-
-export default App;
